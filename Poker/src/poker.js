@@ -41,6 +41,56 @@ var poker = {
   // See the specs for the required formats.
   labelHand: function(hand) {
 
+    var suitMap = {
+      "H": 0,
+      "D": 1,
+      "S": 2,
+      "C": 3
+    };
+
+    var rankMap = {
+      "A" : 0,
+      "2" : 1,
+      "3" : 2,
+      "4" : 3,
+      "5" : 4,
+      "6" : 5,
+      "7" : 6,
+      "8" : 7,
+      "9" : 8,
+      "T" : 9,
+      "J" : 10,
+      "Q" : 11,
+      "K" : 12
+    };
+
+    handMap = [];
+    for (var i = 0; i < 4; i++) {
+      handMap[i] = [];
+    }
+
+    hand = hand.split(" ");
+
+    hand.forEach(function(card) {
+
+      handMap[suitMap[card[1]]][rankMap[card[0]]] = true;
+
+    });
+
+    var totalsArr = [];
+
+    handMap.forEach(function(suit, index) {
+      suit.forEach(function(card, i) {
+        if(totalsArr[i] === undefined) {
+          totalsArr[i] = 1;
+        } else {
+          totalsArr[i]++;
+        }
+      });
+    });
+
+    console.log(totalsArr);
+
   },
 
   // Takes an array of hands and returns the index of the winning hand.
@@ -48,4 +98,15 @@ var poker = {
   findWinner: function(hands) {
 
   }
+
+  function testForMoreThanOne(numberOfSameCards, totalCards) {
+    
+    if(numberOfSameCards === 3) {
+      for(var i = 0; i < totalCards.length; i++) {
+
+      }
+    } 
+  }
+
+
 };

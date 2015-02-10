@@ -45,7 +45,7 @@ describe('Correctly labels poker hands', function() {
     expect(poker.labelHand("TC QC AC KC JC")).to.equal("Royal flush");
   });
 });
-
+/*
 describe("Correctly finds the winner between two or more poker hands", function() {
   it("Royal flush vs 7 high", function(){
     expect(poker.findWinner(["TC JC QC KC AC", "2C 3D 5C 6H 7H"])).to.equal(0);
@@ -103,7 +103,7 @@ describe("Correctly finds the winner between two or more poker hands", function(
   });
 });
 
-
+*/
 
 
 
